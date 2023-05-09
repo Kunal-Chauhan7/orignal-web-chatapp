@@ -39,7 +39,7 @@ section.chat__section {
     overflow-y: auto;
     padding-top: 40px;
 }
-.text_area {
+#text_area {
     width: 100%;
     border: none;
     padding: 20px;
