@@ -10,7 +10,9 @@ body{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: #F8F8F8;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
     font-family: 'Roboto', sans-serif;
 }
 section.chat__section {
@@ -25,11 +27,12 @@ section.chat__section {
     display: flex;
     align-items: center;
 }
-.brand h1 {
+
+.brand h3 {
     text-transform: uppercase;
     font-size: 20px;
     color: #444;
-    margin-left: 10px;
+    margin-left: 75%;
 }
 .message__area{
     height: 500px;
@@ -46,7 +49,8 @@ section.chat__section {
     font-size: 16px;
     outline: none;
     background: #5d5a5a;
-}
+    resize: none;
+}  
 
 .message{
     padding: 20px; 
@@ -54,6 +58,7 @@ section.chat__section {
     margin-bottom: 40px;
     max-width: 300px;
     position: relative;
+    box-shadow: 1px 1px 1px 2px rgb(37, 39, 39);
 }
 .incoming {
     background: #8F8BE8;
@@ -70,4 +75,16 @@ section.chat__section {
     left: 0;
     color: #333;
     font-size: 14px;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
