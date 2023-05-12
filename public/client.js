@@ -14,6 +14,11 @@ textarea.addEventListener('keyup',(e)=>{
     }
 })
 
+function playSound(){
+    var audio = new Audio("/ring.mp3");
+    audio.play();
+}
+
 function sendMessage(message){
     let msg = {
         user: username,
@@ -27,6 +32,9 @@ function appendMessage(msg,type){
     let mainDiv = document.createElement('div');
     let classname = type;
     mainDiv.classList.add(classname , 'message');
+    if (msg.message === 'Kunal Chauhan'){
+        msg.message = 'https://tenor.com/view/itachi-uchiha-naruto-fire-red-eyes-anime-gif-17830637';
+    }
     let markup = `
     
     <h4> ${msg.user}</h4>
@@ -39,6 +47,7 @@ function appendMessage(msg,type){
 socket.on('send_message_to_other',(msg)=>{
     appendMessage(msg,'incoming')
     scrolltobottom();
+    playSound();
 })
 
 function scrolltobottom(){
