@@ -16,11 +16,44 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 section.chat__section {
+    position: relative;
+	margin: 300px auto 0;
     width: 800px;
     max-width: 90%;
-    background: #fff;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    background: linear-gradient(0deg, #000, #272727);
 }
+
+section.chat__section:before, section.chat__section:after {
+	content: '';
+	position: absolute;
+	left: -2px;
+	top: -2px;
+	background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+		#0000ff, #00ff00,#ffff00, #ff0000);
+	background-size: 400%;
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	z-index: -1;
+	animation: steam 20s linear infinite;
+}
+
+@keyframes steam {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
+section.chat__section:after {
+	filter: blur(50px);
+}
+
+
 .brand {
     padding: 20px;
     background: #f1f1f1;
@@ -41,6 +74,8 @@ section.chat__section {
     flex-direction: column;
     overflow-y: auto;
     padding-top: 40px;
+    background-image: url('https://i.pinimg.com/originals/f5/f2/74/f5f27448c036af645c27467c789ad759.gif');
+    background-size: cover;
 }
 #text_area {
     width: 100%;
