@@ -19,6 +19,11 @@ function playSound(){
     audio.play();
 }
 
+function TTS(user,message){
+    let ttm = `${user} said ${message}`;
+    responsiveVoice.speak(ttm);
+}
+
 function sendMessage(message){
     let msg = {
         user: username,
@@ -46,8 +51,9 @@ function appendMessage(msg,type){
 
 socket.on('send_message_to_other',(msg)=>{
     appendMessage(msg,'incoming')
-    scrolltobottom();
     playSound();
+    TTS(msg.user,msg.message);
+    scrolltobottom();
 })
 
 function scrolltobottom(){

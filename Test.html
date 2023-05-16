@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script type="text/javascript" src="/responsive.js"></script>
+
+        <h1>Text to Speech Converter</h1>
+
+        <textarea id="txt" cols="10" rows="10"></textarea>
+        <input onclick="speakText()" type="button" value="submit">
+
+        <script>
+            function speakText(){
+                var text = document.getElementById('txt').value;
+                responsiveVoice.speak(text);
+                
+            }
+        </script>
+    </body>
+</html>
